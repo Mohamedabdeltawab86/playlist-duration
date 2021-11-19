@@ -20,6 +20,8 @@ for link in links:
     duration_list = []
     plylst = Playlist(link)
 
+    
+
     for video in plylst:
         v = YouTube(video)
         duration_list.append(v.length)
@@ -27,5 +29,7 @@ for link in links:
     total_dur_in_sec = sum(duration_list)
 
     td = mytimedelta(seconds=total_dur_in_sec)
-
-    print(str(td))
+    with open("playlist.txt", "a", encoding='utf-8') as f:
+        f.write(f"{plylst.title}\n")
+        f.write(f"{td}\n")
+        f.write("\n")
