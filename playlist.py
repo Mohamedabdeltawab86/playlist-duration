@@ -11,21 +11,18 @@ class mytimedelta(datetime.timedelta):
         return f'{int(hours)}:{int(minutes)}'
 
 
-links = ["https://www.youtube.com/watch?v=yh0E1Vm0oHM&list=PLMESC_UFcDHKHeisGQSxCD3jsGGoDiDNP",
-         "https://www.youtube.com/watch?v=XQgimxIqQrI&list=PLMESC_UFcDHImKorXWhCTCYdXxMO26q1J",
-         "https://www.youtube.com/watch?v=u_UaYfXG8to&list=PLMESC_UFcDHJ8NCTnBIwU2b2CAAu5_IxA"
-         ]
+link = ["https://www.youtube.com/watch?v=yh0E1Vm0oHM&list=PLMESC_UFcDHKHeisGQSxCD3jsGGoDiDNP"]
 
-for link in links:
-    duration_list = []
-    plylst = Playlist(link)
 
-    for video in plylst:
-        v = YouTube(video)
-        duration_list.append(v.length)
+duration_list = []
+plylst = Playlist(link)
 
-    total_dur_in_sec = sum(duration_list)
+for video in plylst:
+    v = YouTube(video)
+    duration_list.append(v.length)
 
-    td = mytimedelta(seconds=total_dur_in_sec)
+total_dur_in_sec = sum(duration_list)
 
-    print(str(td))
+td = mytimedelta(seconds=total_dur_in_sec)
+
+print(str(td))
