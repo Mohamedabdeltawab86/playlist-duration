@@ -20,8 +20,6 @@ for link in links:
     duration_list = []
     plylst = Playlist(link)
 
-    
-
     for video in plylst:
         v = YouTube(video)
         duration_list.append(v.length)
