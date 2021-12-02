@@ -1,4 +1,0 @@
-print(f'\n{plylst.title}', file=open("playlist.txt", "a"))
-
-print(str(td), file=open("playlist.txt", "a"))
-
